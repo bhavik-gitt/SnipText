@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 export default function TextForm(props) {
     const [text, setText] = useState('');
-    
+
     const handleUpClick = () => {
         setText(text.toUpperCase());
         props.showAlert("Converted to Uppercase", "success");
@@ -14,7 +14,7 @@ export default function TextForm(props) {
         props.showAlert("Converted to Lowercase", "success");
     };
 
-    
+
     const handleClearClick = () => {
         setText('');
         props.showAlert("Text Cleared", "success");
@@ -35,10 +35,18 @@ export default function TextForm(props) {
         setText(event.target.value);
     };
 
-    // Word count fix
+    
+    const handleDownload = () => {
+        const blob = new Blob([text], { type: 'text/plain;charsert=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = "textfile.txt";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        props.showAlert("Downloaded .txt file in your device","success")
+    }
     const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-
-    // Styles based on mode
     const textColor = props.mode === 'dark' ? 'white' : 'black';
     const bgColor = props.mode === 'dark' ? '#3c3c3c' : 'white';
 
@@ -55,11 +63,13 @@ export default function TextForm(props) {
                     style={{ backgroundColor: bgColor, color: textColor }}
                 ></textarea>
             </div>
-            <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Uppercase</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Lowercase</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Uppercase</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Lowercase</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear</button>
+            {/* <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleSpeak}>Speak</button> */}
+            <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleDownload}>download .txt</button>
 
             <div className="container my-3" style={{ color: textColor }}>
                 <h2>Your Text Summary</h2>
