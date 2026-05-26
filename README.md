@@ -73,4 +73,4 @@ src/
 
 ## License
 
-This project is currently unlicensed and proprietary. All rights reserved.
+This project is proprietary and has no open-source license. You may not use, copy, modify, or distribute this code without explicit permission from the owner.
