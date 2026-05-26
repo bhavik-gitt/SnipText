@@ -73,4 +73,4 @@ src/
 
 ## License
 
-This project is currently unlicensed.
+No LICENSE file is included yet. Without an explicit license, all rights are reserved by default.
