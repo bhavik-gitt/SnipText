@@ -34,7 +34,6 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
-      // document.title = 'SnipText - LightMode';
     }
   };
 
