@@ -2,291 +2,216 @@
 
 # ✂️ SnipText
 
-### Smart Text Utility Web Application built with React.js
+### A fast, clean, distraction-free word & character counter for the web.
 
-Transform, format, analyze, and manage text instantly with a clean and responsive user interface.
+<p>
+  <img src="https://img.shields.io/badge/React-19.1-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="React 19">
+  <img src="https://img.shields.io/badge/React_Router-7.6-CA4245?logo=reactrouter&logoColor=white&style=for-the-badge" alt="React Router">
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white&style=for-the-badge" alt="Bootstrap 5">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+</p>
 
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
+<p>
+  <img src="https://img.shields.io/badge/status-active-success?style=flat-square" alt="status">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome">
+  <img src="https://img.shields.io/badge/made%20with-%E2%9D%A4-red?style=flat-square" alt="made with love">
+</p>
+
+**Paste your text. Snip away the noise. Get instant stats.**
+
+[Features](#-features) • [Preview](#-preview) • [Getting Started](#-getting-started) • [Project Structure](#-project-structure) • [How It Works](#-how-it-works) • [Roadmap](#-roadmap) • [Contributing](#-contributing)
 
 </div>
 
 ---
 
-# 📖 About
+## 📖 About
 
-SnipText is a modern text utility web application that helps users perform common text manipulation tasks in just one click.
+**SnipText** is a lightweight React utility app for analyzing and cleaning up text on the fly. Paste anything — an essay, a caption, a blog draft — and instantly see the word count, character count, and estimated reading time, while one-click tools let you transform the text, tidy it up, and get it out the door (copied, downloaded, or ready to paste elsewhere).
 
-Whether you're a student, developer, content writer, or professional, SnipText makes editing and analyzing text fast, simple, and efficient.
-
-It is built using **React.js** with a responsive UI that works smoothly across desktops, tablets, and mobile devices.
+No sign-up, no clutter, no ads. Just a textarea and the tools you actually need.
 
 ---
 
-# ✨ UI Preview
+## ✨ Features
 
-> Replace these images after uploading screenshots.
+| | Feature | Description |
+|---|---|---|
+| 🔠 | **Case Conversion** | Instantly flip your text to `UPPERCASE` or `lowercase` |
+| 🧹 | **Remove Extra Spaces** | Collapses repeated spaces into single spaces with one click |
+| 📋 | **Copy to Clipboard** | Copies the current text using the Clipboard API |
+| 💾 | **Download as .txt** | Exports your text as a downloadable `textfile.txt` |
+| 🔢 | **Live Word & Character Count** | Updates in real time as you type |
+| ⏱️ | **Reading Time Estimate** | Approximate minutes-to-read, calculated on the fly |
+| 👁️ | **Live Preview** | See a rendered preview of your text below the editor |
+| 🌗 | **Light / Dark Mode** | One-toggle theme switch across the whole app |
+| 🔔 | **Toast Alerts** | Friendly, auto-dismissing feedback for every action |
+| 🧭 | **Client-side Routing** | Home and About pages via React Router, no page reloads |
+| 📱 | **Responsive UI** | Built on Bootstrap 5 — works from mobile to desktop |
 
-## 🏠 Home Page
+---
 
-<p align="center">
-<img src="screenshots/home.png" width="900">
+## 🖼️ Preview
+
+<div align="center">
+  <img src="./assets/ui-preview.svg" alt="SnipText UI preview — light and dark mode" width="100%">
+  <p><em>Mockup of the SnipText interface — text editor, action toolbar, and live summary panel, in both themes.</em></p>
+</div>
+
+> 💡 Replace `assets/ui-preview.svg` with real screenshots or a GIF of the running app for an even better first impression.
+
+---
+
+## 🧠 How It Works
+
+```mermaid
+flowchart LR
+    A["✍️ Type or paste text"] --> B{Choose an action}
+    B -->|Uppercase| C[Text → UPPERCASE]
+    B -->|Lowercase| D[Text → lowercase]
+    B -->|Remove Extra Spaces| E[Collapse whitespace]
+    B -->|Copy| F[📋 Clipboard]
+    B -->|Download| G[💾 textfile.txt]
+    B -->|Clear| H[🧹 Empty editor]
+    C --> I["📊 Live summary: words · characters · read time"]
+    D --> I
+    E --> I
+    I --> J["👁️ Text Preview"]
+```
+
+Every keystroke recalculates the word count, character count, and estimated reading time (`words × 0.008` minutes) — no submit button, no delay.
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    App["App.js<br/><small>routing · theme state · alerts</small>"]
+    App --> Navbar["Navbar.js<br/><small>brand · nav links · theme toggle</small>"]
+    App --> Alert["Alert.js<br/><small>dismissible toast messages</small>"]
+    App --> Home["Route: '/' → TextForm.js<br/><small>editor · toolbar · live summary</small>"]
+    App --> About["Route: '/about' → About.js<br/><small>accordion FAQ</small>"]
+```
+
+| Component | Responsibility |
+|---|---|
+| `App.js` | Top-level state (`mode`, `alert`), routing via `react-router-dom` |
+| `Navbar.js` | Branding, navigation links, dark/light mode switch |
+| `TextForm.js` | The core editor: textarea, all text-transform actions, live stats |
+| `Alert.js` | Renders a Bootstrap alert whenever an action fires `showAlert()` |
+| `About.js` | Bootstrap accordion explaining what SnipText does |
+
+---
+
+## 🛠️ Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square" alt="JavaScript">
+  <img src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB&style=flat-square" alt="React">
+  <img src="https://img.shields.io/badge/React_Router-CA4245?logo=reactrouter&logoColor=white&style=flat-square" alt="React Router">
+  <img src="https://img.shields.io/badge/Bootstrap_5-7952B3?logo=bootstrap&logoColor=white&style=flat-square" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/Create_React_App-09D3AC?logo=createreactapp&logoColor=white&style=flat-square" alt="CRA">
 </p>
 
----
-
-## 🌙 Dark Mode
-
-<p align="center">
-<img src="screenshots/dark-mode.png" width="900">
-</p>
+- **React 19** — component-driven UI with hooks (`useState`)
+- **React Router 7** — client-side navigation between Home and About
+- **Bootstrap 5** — layout, buttons, accordion, and the responsive grid
+- **Create React App** — zero-config build tooling (`react-scripts`)
 
 ---
 
-## 📊 Text Analysis
+## 🚀 Getting Started
 
-<p align="center">
-<img src="screenshots/summary.png" width="900">
-</p>
+### Prerequisites
 
----
+- [Node.js](https://nodejs.org/) ≥ 16
+- npm (bundled with Node) or yarn
 
-# 🚀 Features
+### Installation
 
-✅ Convert text to Uppercase
+```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/SnipText.git
+cd SnipText
 
-✅ Convert text to Lowercase
+# 2. Install dependencies
+npm install
 
-✅ Copy text to Clipboard
+# 3. Start the development server
+npm start
+```
 
-✅ Remove Extra Spaces
+The app will open automatically at **[http://localhost:3000](http://localhost:3000)**.
 
-✅ Download text as .txt file
+### Available Scripts
 
-✅ Live Text Preview
-
-✅ Word Counter
-
-✅ Character Counter
-
-✅ Reading Time Estimation
-
-✅ Responsive UI
-
-✅ Dark Mode Support
-
----
-
-# 🎨 UI/UX Highlights
-
-- Modern Responsive Design
-- Clean Layout
-- Dark & Light Theme
-- Instant Text Processing
-- One Click Actions
-- Mobile Friendly
-- Fast Performance
-- Minimal Learning Curve
-- User-Friendly Interface
+| Command | Description |
+|---|---|
+| `npm start` | Runs the app in development mode with hot reload |
+| `npm test` | Launches the interactive test runner |
+| `npm run build` | Bundles the app for production into `/build` |
+| `npm run eject` | Ejects CRA config (⚠️ one-way operation) |
 
 ---
 
-# 🛠 Tech Stack
-
-| Technology | Usage |
-|------------|------|
-| React.js | Frontend |
-| JavaScript | Logic |
-| HTML5 | Structure |
-| CSS3 | Styling |
-| Bootstrap | Responsive Design |
-| Clipboard API | Copy Text |
-| Blob API | Download Files |
-
----
-
-# 📂 Project Structure
+## 📁 Project Structure
 
 ```
-SnipText
-│
+SnipText/
 ├── public/
-│
+│   ├── index.html
+│   ├── manifest.json
+│   └── favicon assets
 ├── src/
 │   ├── Components/
-│   │      Navbar.js
-│   │      TextForm.js
-│   │      Alert.js
-│   │      About.js
-│   │
-│   ├── App.js
+│   │   ├── Navbar.js       # Top navigation + theme toggle
+│   │   ├── TextForm.js     # Main editor & text tools
+│   │   ├── Alert.js        # Toast-style alert banner
+│   │   └── About.js        # FAQ / accordion page
+│   ├── App.js               # Routes, theme & alert state
+│   ├── App.css
 │   ├── index.js
-│   └── App.css
-│
+│   └── index.css
 ├── package.json
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## 🗺️ Roadmap
 
-Clone the repository
-
-```bash
-git clone https://github.com/yourusername/SnipText.git
-```
-
-Go inside the project
-
-```bash
-cd SnipText
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Run the application
-
-```bash
-npm start
-```
-
-Open
-
-```
-http://localhost:3000
-```
+- [ ] Real screenshots / demo GIF in the README
+- [ ] Speak-text (text-to-speech) button — scaffolding already in `TextForm.js`
+- [ ] Sentence & paragraph count
+- [ ] Persist theme preference (localStorage)
+- [ ] Deploy a live demo (Vercel / Netlify) and link it here
+- [ ] Unit tests for text-transform utilities
 
 ---
 
-# 💻 How It Works
+## 🤝 Contributing
 
-1. Enter your text.
-2. Choose any utility.
-3. Text updates instantly.
-4. View statistics.
-5. Copy or download your processed text.
+Contributions, issues, and feature requests are welcome!
 
----
-
-# 📊 Text Analytics
-
-The application automatically calculates
-
-- Total Words
-- Total Characters
-- Reading Time
-- Live Preview
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-# 📱 Responsive Design
+## 📄 License
 
-✔ Desktop
-
-✔ Laptop
-
-✔ Tablet
-
-✔ Mobile
-
----
-
-# ⚡ Performance
-
-- Instant text transformation
-- Lightweight React architecture
-- Fast rendering
-- Optimized user interactions
-
----
-
-# 🔮 Future Improvements
-
-- Grammar Checker
-- Spell Checker
-- Text-to-Speech
-- Speech-to-Text
-- Case Converter Options
-- Find & Replace
-- Markdown Support
-- PDF Export
-- Word Frequency Analysis
-- AI Text Summarizer
-- AI Grammar Suggestions
-- Multiple Language Support
-
----
-
-# 📷 Screenshots
-
-```
-screenshots/
-│
-├── home.png
-├── dark-mode.png
-├── summary.png
-└── mobile.png
-```
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-
-```bash
-git checkout -b feature-name
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Added new feature"
-```
-
-4. Push
-
-```bash
-git push origin feature-name
-```
-
-5. Create a Pull Request
-
----
-
-# ⭐ Show your Support
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
-
----
-
-# 👨‍💻 Author
-
-**Bhavik Ratnottar**
-
-GitHub:
-https://github.com/yourusername
-
-LinkedIn:
-https://linkedin.com/in/yourprofile
-
-Email:
-your@email.com
+This project is licensed under the **MIT License** — feel free to use, modify, and distribute it.
 
 ---
 
 <div align="center">
 
-Made with ❤️ using React.js
+Made with ⚛️ React and ☕ by the SnipText contributors
+
+⭐ If you like this project, consider giving it a star!
 
 </div>
