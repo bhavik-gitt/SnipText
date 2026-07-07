@@ -58,8 +58,6 @@ No sign-up, no clutter, no ads. Just a textarea and the tools you actually need.
   <p><em>Mockup of the SnipText interface — text editor, action toolbar, and live summary panel, in both themes.</em></p>
 </div>
 
-> 💡 Replace `assets/ui-preview.svg` with real screenshots or a GIF of the running app for an even better first impression.
-
 ---
 
 ## 🧠 How It Works
