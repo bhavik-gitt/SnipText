@@ -1,70 +1,292 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ✂️ SnipText
 
-## Available Scripts
+### Smart Text Utility Web Application built with React.js
 
-In the project directory, you can run:
+Transform, format, analyze, and manage text instantly with a clean and responsive user interface.
 
-### `npm start`
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# 📖 About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+SnipText is a modern text utility web application that helps users perform common text manipulation tasks in just one click.
 
-### `npm run build`
+Whether you're a student, developer, content writer, or professional, SnipText makes editing and analyzing text fast, simple, and efficient.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It is built using **React.js** with a responsive UI that works smoothly across desktops, tablets, and mobile devices.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# ✨ UI Preview
 
-### `npm run eject`
+> Replace these images after uploading screenshots.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏠 Home Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+<img src="screenshots/home.png" width="900">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌙 Dark Mode
 
-## Learn More
+<p align="center">
+<img src="screenshots/dark-mode.png" width="900">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📊 Text Analysis
 
-### Code Splitting
+<p align="center">
+<img src="screenshots/summary.png" width="900">
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+# 🚀 Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ Convert text to Uppercase
 
-### Making a Progressive Web App
+✅ Convert text to Lowercase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✅ Copy text to Clipboard
 
-### Advanced Configuration
+✅ Remove Extra Spaces
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+✅ Download text as .txt file
 
-### Deployment
+✅ Live Text Preview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+✅ Word Counter
 
-### `npm run build` fails to minify
+✅ Character Counter
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✅ Reading Time Estimation
+
+✅ Responsive UI
+
+✅ Dark Mode Support
+
+---
+
+# 🎨 UI/UX Highlights
+
+- Modern Responsive Design
+- Clean Layout
+- Dark & Light Theme
+- Instant Text Processing
+- One Click Actions
+- Mobile Friendly
+- Fast Performance
+- Minimal Learning Curve
+- User-Friendly Interface
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Usage |
+|------------|------|
+| React.js | Frontend |
+| JavaScript | Logic |
+| HTML5 | Structure |
+| CSS3 | Styling |
+| Bootstrap | Responsive Design |
+| Clipboard API | Copy Text |
+| Blob API | Download Files |
+
+---
+
+# 📂 Project Structure
+
+```
+SnipText
+│
+├── public/
+│
+├── src/
+│   ├── Components/
+│   │      Navbar.js
+│   │      TextForm.js
+│   │      Alert.js
+│   │      About.js
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── App.css
+│
+├── package.json
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/SnipText.git
+```
+
+Go inside the project
+
+```bash
+cd SnipText
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the application
+
+```bash
+npm start
+```
+
+Open
+
+```
+http://localhost:3000
+```
+
+---
+
+# 💻 How It Works
+
+1. Enter your text.
+2. Choose any utility.
+3. Text updates instantly.
+4. View statistics.
+5. Copy or download your processed text.
+
+---
+
+# 📊 Text Analytics
+
+The application automatically calculates
+
+- Total Words
+- Total Characters
+- Reading Time
+- Live Preview
+
+---
+
+# 📱 Responsive Design
+
+✔ Desktop
+
+✔ Laptop
+
+✔ Tablet
+
+✔ Mobile
+
+---
+
+# ⚡ Performance
+
+- Instant text transformation
+- Lightweight React architecture
+- Fast rendering
+- Optimized user interactions
+
+---
+
+# 🔮 Future Improvements
+
+- Grammar Checker
+- Spell Checker
+- Text-to-Speech
+- Speech-to-Text
+- Case Converter Options
+- Find & Replace
+- Markdown Support
+- PDF Export
+- Word Frequency Analysis
+- AI Text Summarizer
+- AI Grammar Suggestions
+- Multiple Language Support
+
+---
+
+# 📷 Screenshots
+
+```
+screenshots/
+│
+├── home.png
+├── dark-mode.png
+├── summary.png
+└── mobile.png
+```
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create your feature branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature-name
+```
+
+5. Create a Pull Request
+
+---
+
+# ⭐ Show your Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+---
+
+# 👨‍💻 Author
+
+**Bhavik Ratnottar**
+
+GitHub:
+https://github.com/yourusername
+
+LinkedIn:
+https://linkedin.com/in/yourprofile
+
+Email:
+your@email.com
+
+---
+
+<div align="center">
+
+Made with ❤️ using React.js
+
+</div>
