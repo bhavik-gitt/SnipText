@@ -210,7 +210,7 @@ This project is licensed under the **MIT License** — feel free to use, modify,
 
 <div align="center">
 
-Made with ⚛️ React and ☕ by the SnipText contributors
+Made with ⚛️ React and ☕ by the Bhavik 
 
 ⭐ If you like this project, consider giving it a star!
 
