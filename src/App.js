@@ -28,12 +28,11 @@ function App() {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#2c2c2c';
-      showAlert("Dark mode has been enabled", "success");
-      // document.title = 'SnipText - DarkMode';
+      showAlert("Dark mode has been enabled", "Success");
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled", "success");
+      showAlert("Light mode has been enabled", "Success");
     }
   };
 
@@ -45,7 +44,7 @@ function App() {
         <div className="container my-3">
           <Routes>
             <Route exact path="/about" element={<About mode={mode}/>}  />
-            <Route exact path="/" element={<TextForm heading="SnipText - Word Counter, Character Counter, Remove extra Spaces" showAlert={showAlert} mode={mode} />} />
+            <Route exact path="/" element={<TextForm heading="SnipText - Word Counter, Character Counter, Remove Extra Spaces" showAlert={showAlert} mode={mode} />} />
           </Routes>
         </div>
       </Router>
